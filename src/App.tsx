@@ -17,7 +17,7 @@ function App() {
     setInputValue(e.target.value);
   };
 
-  //inputValueを用いてtodosにオブジェクトを配列として格納
+  //[追加機能] inputValueを用いてtodosにオブジェクトを配列として格納
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     const newTodo: Todo = {
       id: todos.length,
@@ -28,6 +28,11 @@ function App() {
 
     setTodos([newTodo, ...todos]);
     setInputValue('');
+  };
+
+  // [削除機能]
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
@@ -58,7 +63,12 @@ function App() {
               </div>
               <div className="todo-list-item-button">
                 <button className="todo-list-item-complete">完了</button>
-                <button className="todo-list-item-delete">削除</button>
+                <button
+                  className="todo-list-item-delete"
+                  onClick={() => handleDelete(todo.id)}
+                >
+                  削除
+                </button>
               </div>
             </div>
           ))}
