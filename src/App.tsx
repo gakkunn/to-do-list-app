@@ -25,6 +25,11 @@ function App() {
       return;
     }
 
+    if (inputValue.length > 50) {
+      alert('タイトルは50文字以内で入力してください');
+      return;
+    }
+
     const newTodo: Todo = {
       id: todos.length,
       inputValue: inputValue,
