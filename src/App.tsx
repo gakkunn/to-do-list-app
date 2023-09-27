@@ -9,7 +9,7 @@ function App() {
     id: number;
     inputValue: string;
     checked: boolean;
-    completedOn?: string;
+    datetime: string;
   };
 
   //入力値をinputValueに格納
@@ -23,6 +23,7 @@ function App() {
       id: todos.length,
       inputValue: inputValue,
       checked: false,
+      datetime: new Date().toDateString(),
     };
 
     setTodos([newTodo, ...todos]);
@@ -53,7 +54,7 @@ function App() {
             <div key={todo.id} className="todo-list-item">
               <div className="todo-list-item-title">
                 <h3>{todo.inputValue}</h3>
-                <strong className="todo-list-item-time">9月28日</strong>
+                <strong className="todo-list-item-time">{todo.datetime}</strong>
               </div>
               <div className="todo-list-item-button">
                 <button className="todo-list-item-complete">完了</button>
