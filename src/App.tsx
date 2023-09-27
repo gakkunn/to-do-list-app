@@ -20,6 +20,11 @@ function App() {
 
   //[追加機能] 追加ボタンを押した時に、オブジェクトを作成
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!inputValue.trim()) {
+      alert('入力内容が空です');
+      return;
+    }
+
     const newTodo: Todo = {
       id: todos.length,
       inputValue: inputValue,
@@ -58,7 +63,11 @@ function App() {
           <div className="todo-input-item">
             <form onSubmit={(e) => e.preventDefault()}>
               <label>Title:</label>
-              <input type="text" onChange={(e) => handleNewTodoTitle(e)} />
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => handleNewTodoTitle(e)}
+              />
               <button type="button" onClick={(e) => handleSubmit(e)}>
                 追加
               </button>
