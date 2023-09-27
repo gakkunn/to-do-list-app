@@ -1,42 +1,135 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  color: white;
+  font-size: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.todo-title {
+  font-size: 50px;
+  letter-spacing: 5px;
+  margin-top: 30px;
   text-align: center;
 }
+.todo-wrapper {
+  background-color: #353434;
+  padding: 20px;
+  width: fit-content;
+  margin: 30px auto 0;
+  box-shadow: 0px 5px 7px rgb(26, 25, 25);
+}
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(77, 77, 77);
+  padding-bottom: 25px;
+}
+.todo-input-item {
+  margin-right: 25px;
+}
+.todo-input-item label {
+  display: block;
+}
+.todo-input-item input {
+  margin-top: 10px;
+  border: none;
+  padding: 10px;
+  width: 250px;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+.todo-input-item input:focus {
+  outline: 2px solid rgb(0, 230, 122);
+}
+.todo-input-item button {
+  background-color: rgb(0, 230, 122);
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 11px;
+  width: 60px;
+  cursor: pointer;
+}
+.todo-input-item button:hover {
+  background-color: rgb(0, 230, 122, 0.8);
+}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* 
+チェンジボタン
+*/
+
+.change-buttons-wrapper {
+  margin-top: 20px;
+  color: white;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.change-button {
+  background-color: rgb(92, 92, 92);
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.change-button-active {
+  background-color: rgb(4, 192, 104);
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 
+リストアイテム
+*/
+
+.todo-list-wrapper {
+  margin-top: 20px;
+}
+.todo-list-item {
+  margin-top: 15px;
+  background-color: #414040;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgb(39, 38, 38);
+}
+.todo-list-item-title {
+}
+.todo-list-item-time {
+  display: block;
+  margin-top: 5px;
+  font-size: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+/* 
+削除完了ボタン
+*/
 
-.card {
-  padding: 2em;
+.todo-list-item-button {
+  text-align: right;
 }
-
-.read-the-docs {
-  color: #888;
+.todo-list-item-delete {
+  margin-right: 10px;
+  background-color: rgb(142 21 10);
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 8px;
+  width: 60px;
+  cursor: pointer;
+}
+.todo-list-item-delete:hover {
+  background-color: rgb(142, 21, 10, 0.8);
+}
+.todo-list-item-complete {
+  background-color: rgb(166, 165, 11);
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 8px;
+  width: 60px;
+  cursor: pointer;
+}
+.todo-list-item-complete:hover {
+  background-color: rgb(166, 165, 11, 0.8);
 }
