@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [isCompletedScreen, setIsCompletedScreen] = useState<boolean>(false);
 
   type Todo = {
     id: number;
@@ -30,6 +31,8 @@ function App() {
     setInputValue('');
   };
 
+  // [完了機能]
+
   // [削除機能]
   const handleDelete = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
@@ -51,8 +54,18 @@ function App() {
           </div>
         </div>
         <div className="change-buttons-wrapper">
-          <button className="change-button">To Do</button>
-          <button className="change-button-active">Completed</button>
+          <button
+            className={`change-button${!isCompletedScreen ? '-active' : ''}`}
+            onClick={() => setIsCompletedScreen(false)}
+          >
+            To Do
+          </button>
+          <button
+            className={`change-button${isCompletedScreen ? '-active' : ''}`}
+            onClick={() => setIsCompletedScreen(true)}
+          >
+            Completed
+          </button>
         </div>
         <div className="todo-list-wrapper">
           {todos.map((todo) => (
