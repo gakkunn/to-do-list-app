@@ -11,7 +11,7 @@ const TodoInput: React.FC = () => {
   const MAX_TODOS = 100;
   const [inputValue, setInputValue] = useRecoilState(todoInputState);
   const [todos, setTodos] = useRecoilState(todoListState);
-  const [errorMessage, setErrorMessage] = useRecoilState(errorMessageState);
+  const [, setErrorMessage] = useRecoilState(errorMessageState);
 
   //入力値をinputValueに格納
   const handleNewTodoTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,7 +19,7 @@ const TodoInput: React.FC = () => {
   };
 
   //[追加機能] 追加ボタンを押した時に、オブジェクトを作成
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = () => {
     setErrorMessage('');
     if (!inputValue.trim()) {
       setErrorMessage('入力内容が空です');
@@ -54,7 +54,7 @@ const TodoInput: React.FC = () => {
             value={inputValue}
             onChange={(e) => handleNewTodoTitle(e)}
           />
-          <button type="button" onClick={(e) => handleSubmit(e)}>
+          <button type="button" onClick={() => handleSubmit()}>
             追加
           </button>
         </form>
