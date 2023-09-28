@@ -2,9 +2,12 @@ import React, { MouseEvent, useState } from 'react';
 import './App.css';
 
 function App() {
+  const MAX_TODOS = 100;
+
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isCompletedScreen, setIsCompletedScreen] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   type Todo = {
     id: number;
@@ -20,13 +23,20 @@ function App() {
 
   //[追加機能] 追加ボタンを押した時に、オブジェクトを作成
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setErrorMessage('');
+
     if (!inputValue.trim()) {
-      alert('入力内容が空です');
+      setErrorMessage('入力内容が空です');
       return;
     }
 
     if (inputValue.length > 50) {
-      alert('タイトルは50文字以内で入力してください');
+      setErrorMessage('タイトルは50文字以内で入力してください');
+      return;
+    }
+
+    if (todos.length >= MAX_TODOS) {
+      setErrorMessage(`Todoは${MAX_TODOS}個までしか追加できません`);
       return;
     }
 
@@ -39,6 +49,7 @@ function App() {
 
     setTodos([newTodo, ...todos]);
     setInputValue('');
+    setErrorMessage('');
   };
 
   // [完了機能] 完了ボタンを押した時に、そのTodoのcheckedをtrueにする
@@ -63,6 +74,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="todo-title">Todo List</h1>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <div className="todo-wrapper">
         <div className="todo-input">
           <div className="todo-input-item">

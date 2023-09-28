@@ -10,6 +10,12 @@
   margin-top: 30px;
   text-align: center;
 }
+.error-message {
+  text-align: center;
+  margin-top: 30px;
+  color: red;
+  font-style: 22px;
+}
 .todo-wrapper {
   max-width: 1080px;
   background-color: #353434;
