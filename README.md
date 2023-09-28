@@ -1,27 +1,21 @@
-# React + TypeScript + Vite
+## The-View
+  1.タスク作成後
+  ![Screenshot 2023-09-28 at 16 03 33](https://github.com/gakkunn/search-word-app/assets/130534378/8f2a8eee-af5b-4679-9766-de586b7bc8ea)
+  
+  2.タスク完了後
+  ![Screenshot 2023-09-28 at 16 03 33](https://github.com/gakkunn/search-word-app/assets/130534378/8ac2d0a1-3e0c-49f9-a8aa-4a8d7381abb4)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## URL
+  https://simple-todo-lists-react-typescript.netlify.app
 
-Currently, two official plugins are available:
+## 使用技術
+- React
+- Typescipt
+- Vite(ビルドツール)
+- Reacoil(状態管理)
+- Vitest(ユニットテスト)（ただいま更新中）
+- Netlify(デプロイツール)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 機能一覧
+- TODOアイテムの追加、削除、完了
+- TODOアイテムの完了と未完了をフィルタリング
