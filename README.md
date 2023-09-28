@@ -1,6 +1,6 @@
 ## The-View
   1.タスク作成後
-  ![Screenshot 2023-09-28 at 16 03 33](https://github.com/gakkunn/search-word-app/assets/130534378/8f2a8eee-af5b-4679-9766-de586b7bc8ea)
+  ![Screenshot 2023-09-28 at 16 07 21](https://github.com/gakkunn/to_do_list_app/assets/130534378/226e0479-ff44-4bb9-983a-9da584069e2f)
   
   2.タスク完了後
   ![Screenshot 2023-09-28 at 16 03 33](https://github.com/gakkunn/search-word-app/assets/130534378/8ac2d0a1-3e0c-49f9-a8aa-4a8d7381abb4)
